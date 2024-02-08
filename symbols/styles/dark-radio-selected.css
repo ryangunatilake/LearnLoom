@@ -1,0 +1,38 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 8.4rem;
+}.dark-radio-selected-rN9 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.dark-radio-selected-rN9 .auto-group-rawv-QuT {
+  margin-right: 0.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.dark-radio-selected-rN9 .selected-MZo {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2;
+  color: #ffffff;
+  font-family: Epilogue, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
