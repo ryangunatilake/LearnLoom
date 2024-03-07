@@ -1,0 +1,57 @@
+
+    
+
+  
+  /* Base styles */
+.app {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #E3BCB4;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lecture-note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Creative styles */
+  .lecture-note-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .lecture-note-item {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 10px;
+  }
+  
+  .lecture-note-item span {
+    font-weight: bold;
+    color: #ff6b6b;
+  }
+  

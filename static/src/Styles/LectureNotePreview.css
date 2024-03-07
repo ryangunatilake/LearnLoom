@@ -1,0 +1,61 @@
+.app {
+    display: flex; /* Arrange sidebar and content side-by-side */
+    font-family: sans-serif; /* Set the base font family */
+    min-height: 100vh; /* Set the minimum viewport height */
+  }
+  
+  .content-container {
+    flex: 1; /* Allow content to fill remaining space */
+    padding: 20px; /* Add padding to content area */
+    background-color: #d79f72; /* Set a light background color */
+    text-align: center;
+    font-size: medium;
+    color: #000000;
+    font-weight: bold;
+    display: flex; /* Arrange lecture notes in rows */
+    flex-wrap: wrap; /* Allow lecture notes to wrap */
+    justify-content: space-between; /* Distribute lecture notes evenly */
+  }
+  
+  .lecture-note {
+    margin-bottom: 50px; /* Add space between lecture notes */
+    border: 1px solid #ffeded; /* Add a light border */
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px; /* Reduce padding to make the box smaller */
+    width: calc(45% - 30px); /* Reduce width to make the box smaller */
+    box-sizing: border-box;
+    width: 1500px; /* Set width to 200 pixels */
+    height: 1000px;
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+  
+  .lecture-note-title {
+    color: black;
+    text-align: center;
+    font-size: 24px; /* Increase font size */
+    margin-bottom: 20px; /* Add some bottom margin */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Convert text to uppercase */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+  
+  .download-buttons {
+    margin-top: 20px;
+  }
+  
+  .download-buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .download-buttons button:hover {
+    background-color: #45a049;
+  }
+  
