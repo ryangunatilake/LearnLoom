@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import whiteText from "../Assets/White-Text.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCommentDots,
@@ -31,37 +32,32 @@ function Navbar() {
     <div className="navbar-section">
       <h1 className="navbar-title">
         <Link to="/" className="navbar-logo">
-          <img src="../Assets/White-Text.png" alt="LearnLoom" className="navbar-logo-img" /> 
+          <img src={whiteText} alt="LearnLoom" className="navbar-logo-img" />
         </Link>
       </h1>
 
       {/* Desktop */}
       <ul className="navbar-items">
         <li>
-          <Link to="#about" className="navbar-links">
+          <Link to="/about-us" className="navbar-links">
             About Us
           </Link>
         </li>
         <li>
           <a href="#services" className="navbar-links">
-            DashBoard
+            Dashboard
           </a>
         </li>
         <li>
-          <a href="#appointmentform" className="navbar-links">
+          <Link to="/contact-us" className="navbar-links">
             Contact Us
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#reviews" className="navbar-links">
             Blog
           </a>
         </li>
-        {/* <li>
-          <a href="#doctors" className="navbar-links">
-            Doctors
-          </a>
-        </li> */}
       </ul>
 
       <button
@@ -70,7 +66,7 @@ function Navbar() {
         disabled={isButtonDisabled}
         onClick={handleChatBtnClick}
       >
-        {/* <FontAwesomeIcon icon={faCommentDots} /> */ }SIGN UP! 
+        SIGN UP!
       </button>
 
       {/* Mobile */}
@@ -81,35 +77,25 @@ function Navbar() {
 
         <ul className="mobile-navbar-links">
           <li>
-            <Link onClick={openNav} to="/">
+            <Link onClick={openNav} to="/about-us">
               About Us
             </Link>
           </li>
           <li>
             <a onClick={openNav} href="#services">
-              DashBoard
+              Dashboard
             </a>
           </li>
           <li>
-            <a onClick={openNav} href="#about">
+            <Link onClick={openNav} to="/contact-us">
               Contact Us
-            </a>
+            </Link>
           </li>
           <li>
             <a onClick={openNav} href="#reviews">
               Blog
             </a>
           </li>
-          {/* <li>
-            <a onClick={openNav} href="#doctors">
-              Doctors
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#contact">
-              Contact
-            </a>
-          </li> */}
         </ul>
       </div>
 

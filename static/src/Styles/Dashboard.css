@@ -1,0 +1,9 @@
+.component {
+  display: flex;
+  flex-direction: row;
+}
+
+.overview-project-summary {
+  display: flex;
+  flex-direction: column;
+}

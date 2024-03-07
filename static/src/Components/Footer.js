@@ -1,7 +1,6 @@
 import React from "react";
 import "../Styles/Footer.css";
-import SubscribeNewsletter from "./SubscribeNewsletter";
-import { Link } from "react-router-dom";
+import blackText from "../Assets/Black-Text.png";
 
 function Footer() {
   return (
@@ -9,41 +8,31 @@ function Footer() {
       <div className="footer-container">
         <div className="ft-info">
           <div className="ft-info-p1">
-            <p className="ft-title">
-              Health <span className="ft-sign">+</span>
-            </p>
+            <img src={blackText} alt="LearnLoom Logo" className="ft-logo" />
             <p className="ft-description">
-              Talk to online doctors and get medical advice, online
-              prescriptions, refills and medical notes within minutes. On-demand
-              healthcare services at your fingertips.
+            "Empowering Education Through Innovation: Dive into Learning with Learn Loom – 
+            Where Lecture Recordings Become Enriched Lecture Notes, Flashcards, and Thought-Provoking Questions."
             </p>
           </div>
-
-          <SubscribeNewsletter />
         </div>
 
         <div className="ft-list">
-          <p className="ft-list-title">Services</p>
+          <p className="ft-list-title">Menu</p>
           <ul className="ft-list-items">
             <li>
-              <a href="#services">Emergency Care</a>
+              <a href="#services">Lecture Notes</a>
             </li>
             <li>
-              <a href="#services">Heart Disease</a>
+              <a href="#services">Flash cards</a>
             </li>
             <li>
-              <a href="#services">Dental Care</a>
+              <a href="#services">Questions</a>
             </li>
-            <li>
-              <a href="#services">Prescription</a>
-            </li>
-            <li>
-              <a href="#services">Insights for doctors</a>
-            </li>
+          
           </ul>
         </div>
 
-        <div className="ft-list">
+        {/* <div className="ft-list">
           <p className="ft-list-title">Legal</p>
           <ul className="ft-list-items">
             <li>
@@ -62,31 +51,31 @@ function Footer() {
               <Link to={"/legal"}>How it Works</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="ft-list" id="contact">
-          <p className="ft-list-title">Talk To Us</p>
+          <p className="ft-list-title">Service</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:support@healthplus.com">support@healthplus.com</a>
+              <a href="mailto:support@healthplus.com">support@learnloom.com</a>
             </li>
             <li>
               <a href="mailto:appointment@healthplus.com">
-                appointment@healthplus.com
+                info@learnloom.com
               </a>
             </li>
             <li>
-              <a href="tel:+022 5454 5252">+022 5454 5252</a>
+              <a href="tel:+94 91 2227 009">+94 91 2227 009</a>
             </li>
             <li>
-              <a href="tel:+022 2326 6232">+022 2326 6232</a>
+              <a href="tel:+94 91 2227 009">+94 91 2227 009</a>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="ft-copyright">
-        <p>© 2013-2023 Health+. All rights reserved.</p>
+        <p>Copyright © 2024 LEARNLOOM. All Rights Reserved.</p>
 
         <ul className="ft-social-links">
           <li>

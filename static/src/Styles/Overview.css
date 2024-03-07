@@ -1,0 +1,51 @@
+.stats-container {
+  padding:20px;
+  margin-top: 100px;
+  margin-left: -300px;
+  font-family: Poppins, sans-serif;
+}
+
+.stats-container h1{
+  color: white;
+  margin-bottom: -10px;
+}
+
+.stats-cards {
+ display:flex;
+ gap :2px;
+ margin-left: -30px;
+}
+
+.card {
+ border :1px solid #ccc;
+ padding :20px;
+ border-radius :10px;
+ width :230px; 
+ margin: 25px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+
+.card p, .card h2, .card span {
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: underline;
+}
+
+.card h2 {
+  text-decoration: none;
+}
+
+.card span{
+  text-decoration: none;
+  color: black;
+}
+
+.time-period{
+ padding :10px; 
+ border-radius :5px; 
+}

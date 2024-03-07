@@ -1,19 +1,27 @@
+body {
+    background-color: black;
+}
 .info-section {
     padding: 0 32px;
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
 }
+
 .info-title-content {
-    margin: 64px 0 128px 0;
+    margin: 28px 0 8px 0;
 }
+
 .info-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Epilogue', sans-serif;
     font-size: 40px;
     font-weight: bold;
+    color: white;
 }
+
 .info-title > span {
     position: relative;
 }
+
 .info-title span::before {
     content: '';
     position: absolute;
@@ -24,29 +32,35 @@
     left: 0;
     bottom: -8px; 
 }
+
 .info-description {
     margin: 64px;
     text-align: center;
     color: rgb(77, 75, 75);
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Epilogue', sans-serif;
     font-size: 18px;
     letter-spacing: .8px;
     line-height: 1.8rem;
 }
+
 /* Cards */
 .info-cards-content {
     margin: 64px 0;
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
     gap: 32px;
+    position: relative;
+    right: 0;
+    top: 0;
 }
+
 .info-cards {
     height: auto;
     /* border: 2px solid #d7d3d3; */
     border-radius: 12px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     position: relative;
 }
+
 .info-card-title {
     margin: 32px 0 40px 0;
     color: black;
@@ -55,48 +69,93 @@
     font-weight: bold;
     letter-spacing: .8px;
 }
+
 .info-card-description {
     margin: 24px;
-    color: rgb(77, 75, 75);
+    color: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     letter-spacing: .8px;
     line-height: 1.5rem;
 }
-/* .info-card-icon {
-    position: absolute;
-    top: -24px;
-    left: 44%;
-    padding: 10px;
-    background-color: #DCE6FF;
-    border-radius: 30px;
-} */
-/* .info-fa-icon {
-    color: #2C96FF;
-    font-size: 24px;
-} */
+
 .info-card {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
     margin-bottom: 32px;
 }
+
 .info-card-icon {
     margin-right: 24px;
 }
+
 .info-card-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 }
+
 .info-card-title {
-    font-size: 24px;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 12px;
+    color: #ffffff;
+    flex-basis: 40%;
 }
+
 .info-card-description {
-    flex: 1;
-    background-color: #f2f2f2;
+    flex-basis: 55%;
     padding: 16px;
+    background-color: #A498E7;
     border-radius: 8px;
+    margin-left: 16px;
+}
+.video-player {
+    width: 20%; /* Adjust the width as needed */
+}
+
+.video-description {
+    flex-basis: 35%; /* Adjust the width as needed */
+    margin-left: 40%;
+    margin-right: auto;
+    margin-top: -140px;
+    text-align: left;
+}
+
+.video-text {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.info-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+.cta-rectangle {
+    background-color: #5C338C;
+    width: 100vm;
+    padding: 52px;
+    /* border-radius: 8px; */
+    position: relative;
+    left: 0;
+    top: 0;
+}  
+.cta-text {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 72px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+.cta-description {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 /* Responsive */
 @media screen and (max-width: 1000px) {
