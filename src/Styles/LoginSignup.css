@@ -1,0 +1,189 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    margin-top :200px;
+    width:600px;
+    background:#fff;
+    padding-bottom: 30px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:9px;
+    width:100%;
+    margin-top:30px;
+}
+.text{
+    color:#5C338C;
+    font-size:48px;
+    font-weight: 700;
+}
+
+.underline{
+    width:61px;
+    height:6px;
+    background:#5C338C ;
+    border-radius: 9px;
+}
+
+.error {
+    transform: translate(25%);
+    color: red;
+    font-size:19px;
+    margin-top: 10px;
+}
+
+
+.inputs{
+    margin-top:55px;
+    display:flex;
+    flex-direction: column;
+    gap:25px;
+}
+
+.input{
+    display: flex;
+    align-items:center;
+    margin:auto;
+    width:480px;
+    height:80px;
+    background-color: gray;
+    border-radius: 6px;
+}
+.input img{
+    margin: 0px 30px;
+}
+
+.input input{
+    height: 50px;
+    width: 400px;
+    background-color: transparent;
+    border:none;
+    outline:none;
+    color: #797979;
+    font-size:19px;
+}
+
+.switch_action{
+    padding-left: 170px;
+    color: #797979;
+    font-size:18px;
+}
+
+.forgot_password{
+    padding-left: 200px;
+    color: #797979;
+    font-size:18px;
+}
+
+.switch_action p span:hover, .forgot_password p span:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+
+.forgot_password p span, .switch_action p span{
+    color:#5C338C;
+    cursor:pointer;
+}
+
+.submit_container{
+    margin-left: 50%;
+    display: flex;
+    gap:30px;
+    margin:60px 200px;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background-color: #5C338C;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gray{
+    background: #EAEAEA;
+    color: #676767;
+}
+
+/* Lost Password Styles */
+.lost-password-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    justify-content: center;
+}
+
+.lost-password-container h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.lost-password-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.input input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button[type="button"] {
+    background-color: #6c757d;
+}
+
+button[type="button"]:hover {
+    background-color: #545b62;
+}
+
