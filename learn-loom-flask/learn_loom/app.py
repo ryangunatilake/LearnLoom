@@ -1,7 +1,7 @@
 #imports
 
-from io import BytesIO
-
+from io import BytesIO 
+#importing BytesIO class from Io module
 
 from bs4 import BeautifulSoup
 from docx import Document
