@@ -1,4 +1,7 @@
+#imports
+
 from io import BytesIO
+
 
 from bs4 import BeautifulSoup
 from docx import Document
@@ -15,6 +18,7 @@ from util import constant, util
 import os
 import uuid
 
+#Creating the flask application
 app = Flask(__name__)
 CORS(app)
 
@@ -27,7 +31,7 @@ app.config['THUMBNAIL_FOLDER'] = THUMBNAIL_FOLDER
 ACCOUNT_ID = '37df8c3e-bd8c-476e-82fb-86fd52f1f0a0'
 SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9'
 
-
+#Gets infromation about the videos in database
 @app.route('/api/video', methods=['GET'])
 def get_all_videos():
     conn = video_repository.create_connection()
@@ -37,7 +41,7 @@ def get_all_videos():
         print('list_of_videos', dict_of_videos)
         return jsonify(dict_of_videos)
 
-
+#Gets information about single video by its uuid
 @app.route('/api/video/<video_uuid>', methods=['GET'])
 def get_video_by_uuid(video_uuid):
     conn = video_repository.create_connection()
@@ -48,7 +52,7 @@ def get_video_by_uuid(video_uuid):
         print('dict_of_videos', dict_of_videos)
         return jsonify(dict_of_videos)
 
-
+#Generates PDF dcument
 @app.route('/api/video/<video_uuid>/pdf', methods=['GET'])
 def get_video_content_as_pdf_by_uuid(video_uuid):
     type = request.args.get('type')
@@ -128,7 +132,7 @@ def get_video_content_as_pdf_by_uuid(video_uuid):
 
         return response
 
-
+#Generates word document
 @app.route('/api/video/<video_uuid>/word-doc', methods=['GET'])
 def get_video_content_as_word_by_uuid(video_uuid):
     type = request.args.get('type')
@@ -166,6 +170,7 @@ def get_video_content_as_word_by_uuid(video_uuid):
         return send_file('sample.docx', as_attachment=True)
 
 
+#Gets a thumbnail for the video to display
 @app.route('/api/video/<video_uuid>/thumb', methods=['GET'])
 def get_video_thumbnail(video_uuid):
     return send_file(os.path.join(app.config["THUMBNAIL_FOLDER"], f"{video_uuid}.jpg"), mimetype='image/jpeg')
