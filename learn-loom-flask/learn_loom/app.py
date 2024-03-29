@@ -20,7 +20,7 @@ import uuid
 
 #Creating flask application
 app = Flask(_name_)
-CORS(app)
+CORS(app) # Allowing Cross-Origin Resource Sharing (CORS) for the Flask application
 
 # This is the path to the directory to save the uploaded files.
 UPLOAD_FOLDER = constant.BASE_DIR + '\\uploaded-files'
