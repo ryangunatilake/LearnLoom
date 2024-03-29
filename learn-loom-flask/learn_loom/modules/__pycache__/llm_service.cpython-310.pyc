@@ -1,0 +1,13 @@
+o
+    [fK  ã                   @   s(   d dl Z d dlZd dlmZ dd„ ZdS )é    N)Ú jsonifyc                 C   st   t dƒ d}t dd| dœgdd œ¡}dd	d
+œ}tj|||d
+}t d| ¡ ƒ | ¡ d
+ d d d }t d|ƒ |S )Nzinvoking llm-servicez*https://api.openai.com/v1/chat/completionsz
+gpt-3.5-turboÚuser)ZroleÚ contentgffffffæ?)ÚmodelÚmessagesZ
+temperaturezapplication/jsonz:)zContent-TypeÚ
+Authorization)Ú headersÚdatazchat gpt response: Ú choicesr   Ú messager   zresponse_text: )ÚprintÚjsonÚdumpsÚrequestsÚpost)Ztext_contentÚurlÚ payloadr   ÚresponseZ
+response_text© r   úSC:\Users\ASUS\Desktop\Learn Loom\learn-loom-flask\learn_loom\modules\llm_service.pyÚ
+invoke_llm    s$   şÿø
+ş
+r   )r
+   r   Úflaskr   r   r   r   r   r   Ú<module>   s   

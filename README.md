@@ -1,2 +1,0 @@
-# LearnLoom
-SDGP Project
