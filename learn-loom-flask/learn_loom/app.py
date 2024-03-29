@@ -12,7 +12,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from werkzeug.utils import secure_filename
 from modules import llm_service, video_indexer_service
-from db import video_repository
+from db import video_repository # Importing video_repository module from db package
 from util import constant, util
 
 import os
