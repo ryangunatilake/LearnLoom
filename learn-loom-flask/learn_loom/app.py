@@ -4,7 +4,7 @@ from io import BytesIO
 #importing BytesIO class from IO module
 
 from bs4 import BeautifulSoup # Importing BeautifulSoup class from bs4 module
-from docx import Document
+from docx import Document  # Importing Document class from docx module
 from flask import Flask, request, redirect, flash, jsonify, url_for, send_file, make_response
 from flask_cors import CORS
 from reportlab.lib.pagesizes import letter
