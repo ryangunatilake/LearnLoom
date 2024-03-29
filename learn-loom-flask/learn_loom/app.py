@@ -3,7 +3,7 @@
 from io import BytesIO 
 #importing BytesIO class from IO module
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # Importing BeautifulSoup class from bs4 module
 from docx import Document
 from flask import Flask, request, redirect, flash, jsonify, url_for, send_file, make_response
 from flask_cors import CORS
