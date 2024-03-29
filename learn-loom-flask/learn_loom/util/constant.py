@@ -1,0 +1,1 @@
+BASE_DIR = 'C:\\Users\\ASUS\\Desktop\\LearnLoom\\learn-loom-flask'
