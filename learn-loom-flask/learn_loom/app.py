@@ -1,8 +1,7 @@
-
 #imports
 
-from io import BytesIO
-
+from io import BytesIO 
+#importing BytesIO class from IO module
 
 from bs4 import BeautifulSoup
 from docx import Document
@@ -19,10 +18,8 @@ from util import constant, util
 import os
 import uuid
 
-
 #Creating the flask application
-
-app = Flask(__name__)
+app = Flask(_name_)
 CORS(app)
 
 # This is the path to the directory to save the uploaded files.
@@ -34,7 +31,6 @@ app.config['THUMBNAIL_FOLDER'] = THUMBNAIL_FOLDER
 ACCOUNT_ID = '37df8c3e-bd8c-476e-82fb-86fd52f1f0a0'
 SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9'
 
-
 #Gets infromation about the videos in database
 @app.route('/api/video', methods=['GET'])
 def get_all_videos():
@@ -45,9 +41,7 @@ def get_all_videos():
         print('list_of_videos', dict_of_videos)
         return jsonify(dict_of_videos)
 
-
 #Gets information about single video by its uuid
-
 @app.route('/api/video/<video_uuid>', methods=['GET'])
 def get_video_by_uuid(video_uuid):
     conn = video_repository.create_connection()
@@ -57,7 +51,6 @@ def get_video_by_uuid(video_uuid):
         dict_of_videos = video.to_dict()
         print('dict_of_videos', dict_of_videos)
         return jsonify(dict_of_videos)
-
 
 #Generates PDF dcument
 @app.route('/api/video/<video_uuid>/pdf', methods=['GET'])
@@ -221,3 +214,60 @@ def upload_file():
                  'video_ext': video_ext})
             return response
 
+
+@app.route('/api/process-video', methods=['POST'])
+def video_process():
+    print('process-video')
+
+    video = request.get_json().get('video_uuid')
+    video_uuid = video['video_uuid']
+    video_ext = video['video_ext']
+    print('video_uuid', video_uuid)
+
+    video_path = UPLOAD_FOLDER + '/' + video_uuid + video_ext
+
+    # Get access token
+    access_token = video_indexer_service.get_access_token(ACCOUNT_ID, SUBSCRIPTION_KEY)
+
+    # Upload video and get video ID
+    video_indexer_id = video_indexer_service.upload_video(access_token, ACCOUNT_ID, video_path, video_uuid)['id']
+    conn = video_repository.create_connection()
+    with conn:
+        video_id = video_repository.update_video_indexer_id(conn, video_indexer_id, video_uuid)
+        print('done - [/api/process-video]')
+        return jsonify({'video_uuid': video_id, 'video_indexer_id': video_indexer_id})
+
+
+@app.route('/api/process', methods=['POST'])
+def process():
+    print('process-text')
+
+    video = request.get_json().get('video_uuid')
+    video_uuid = video['video_uuid']
+
+    conn = video_repository.create_connection()
+    with conn:
+        video = video_repository.read_video_by_video_uuid(conn, video_uuid)
+        video_indexer_id = video.video_indexer_id
+
+        # Get access token
+        access_token = video_indexer_service.get_access_token(ACCOUNT_ID, SUBSCRIPTION_KEY)
+
+        VideoIndex = video_indexer_service.get_video_index(access_token, ACCOUNT_ID, video_indexer_id)
+        transcript = VideoIndex.transcript
+        print('transcript:', transcript)
+
+        inputs = [
+            'Create a note with topics from the embedded text by only including the relvant and important educational content of around 500 words.',
+            'Create 10 questions from the text that are educationally relevant, also include ideal answers.',
+            'Create 10 flashcards from the most educationally relevant content given.']
+
+        note = llm_service.invoke_llm(inputs[0] + transcript)
+        questions = llm_service.invoke_llm(inputs[1] + transcript)
+        flash_cards = llm_service.invoke_llm(inputs[2] + transcript)
+
+        conn = video_repository.create_connection()
+        with conn:
+            video_id = video_repository.update_video_content(conn, note, questions, flash_cards, video_uuid)
+            return jsonify({'state': VideoIndex.state, 'video_id': video_id, 'note': note, 'questions': questions,
+                            'flash_cards': flash_cards})
