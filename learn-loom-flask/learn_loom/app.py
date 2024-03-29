@@ -18,7 +18,7 @@ from util import constant, util
 import os
 import uuid
 
-#Creating the flask application
+#Creating flask application
 app = Flask(_name_)
 CORS(app)
 
