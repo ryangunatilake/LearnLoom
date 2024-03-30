@@ -56,7 +56,7 @@ def get_video_by_uuid(video_uuid):
     with conn:
         video = video_repository.read_video_by_video_uuid(conn, video_uuid)
         video_indexer_id = video.video_indexer_id
-        dict_of_videos = video.to_dict()
+        dict_of_videos = video.to_dict() # Converting video object to dictionary format
         print('dict_of_videos', dict_of_videos)
         return jsonify(dict_of_videos)
 
