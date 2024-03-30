@@ -3,24 +3,29 @@
 from io import BytesIO 
 #importing BytesIO class from IO module
 
-from bs4 import BeautifulSoup
-from docx import Document
+from bs4 import BeautifulSoup 
+# Importing BeautifulSoup class from bs4 module
+from docx import Document  
+# Importing Document class from docx module
 from flask import Flask, request, redirect, flash, jsonify, url_for, send_file, make_response
 from flask_cors import CORS
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from werkzeug.utils import secure_filename
-from modules import llm_service, video_indexer_service
-from db import video_repository
+from modules import llm_service, video_indexer_service 
+# Importing llm_service and video_indexer_service modules from modules package
+from db import video_repository 
+# Importing video_repository module from db package
 from util import constant, util
 
 import os
 import uuid
 
-#Creating the flask application
+#Creating flask application
 app = Flask(_name_)
-CORS(app)
+CORS(app) 
+# Allowing Cross-Origin Resource Sharing (CORS) for the Flask application
 
 # This is the path to the directory to save the uploaded files.
 UPLOAD_FOLDER = constant.BASE_DIR + '\\uploaded-files'
@@ -29,12 +34,15 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['THUMBNAIL_FOLDER'] = THUMBNAIL_FOLDER
 
 ACCOUNT_ID = '37df8c3e-bd8c-476e-82fb-86fd52f1f0a0'
-SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9'
+# Setting the ACCOUNT_ID constant
+SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9' 
+# Setting the SUBSCRIPTION_KEY constant
 
 #Gets infromation about the videos in database
 @app.route('/api/video', methods=['GET'])
 def get_all_videos():
-    conn = video_repository.create_connection()
+    conn = video_repository.create_connection() 
+    # Establishing a connection to the database
     with conn:
         list_of_videos = video_repository.read_all_videos(conn)
         dict_of_videos = [vid.to_dict() for vid in list_of_videos]
