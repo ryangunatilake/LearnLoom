@@ -1,3 +1,4 @@
+
 #imports
 
 from io import BytesIO
@@ -18,7 +19,9 @@ from util import constant, util
 import os
 import uuid
 
+
 #Creating the flask application
+
 app = Flask(__name__)
 CORS(app)
 
@@ -31,6 +34,7 @@ app.config['THUMBNAIL_FOLDER'] = THUMBNAIL_FOLDER
 ACCOUNT_ID = '37df8c3e-bd8c-476e-82fb-86fd52f1f0a0'
 SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9'
 
+
 #Gets infromation about the videos in database
 @app.route('/api/video', methods=['GET'])
 def get_all_videos():
@@ -41,7 +45,9 @@ def get_all_videos():
         print('list_of_videos', dict_of_videos)
         return jsonify(dict_of_videos)
 
+
 #Gets information about single video by its uuid
+
 @app.route('/api/video/<video_uuid>', methods=['GET'])
 def get_video_by_uuid(video_uuid):
     conn = video_repository.create_connection()
@@ -51,6 +57,7 @@ def get_video_by_uuid(video_uuid):
         dict_of_videos = video.to_dict()
         print('dict_of_videos', dict_of_videos)
         return jsonify(dict_of_videos)
+
 
 #Generates PDF dcument
 @app.route('/api/video/<video_uuid>/pdf', methods=['GET'])
@@ -213,6 +220,4 @@ def upload_file():
                 {'video_id': video_id, 'video_uuid': video_uuid, 'original_video_name': original_video_name,
                  'video_ext': video_ext})
             return response
-
-
 
