@@ -29,7 +29,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['THUMBNAIL_FOLDER'] = THUMBNAIL_FOLDER
 
 ACCOUNT_ID = '37df8c3e-bd8c-476e-82fb-86fd52f1f0a0' # Setting the ACCOUNT_ID constant
-SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9'
+SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9' # Setting the SUBSCRIPTION_KEY constant
 
 #Gets infromation about the videos in database
 @app.route('/api/video', methods=['GET'])
