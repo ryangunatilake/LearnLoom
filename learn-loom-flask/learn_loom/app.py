@@ -34,7 +34,7 @@ SUBSCRIPTION_KEY = 'a9a8ff314bff420faa39c3237ffc5be9' # Setting the SUBSCRIPTION
 #Gets infromation about the videos in database
 @app.route('/api/video', methods=['GET'])
 def get_all_videos():
-    conn = video_repository.create_connection()
+    conn = video_repository.create_connection() # Establishing a connection to the database
     with conn:
         list_of_videos = video_repository.read_all_videos(conn)
         dict_of_videos = [vid.to_dict() for vid in list_of_videos]
