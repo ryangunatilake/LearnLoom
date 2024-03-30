@@ -47,7 +47,7 @@ def get_all_videos():
         list_of_videos = video_repository.read_all_videos(conn)
         dict_of_videos = [vid.to_dict() for vid in list_of_videos]
         print('list_of_videos', dict_of_videos)
-        return jsonify(dict_of_videos)
+        return jsonify(dict_of_videos)  # Returning the list of videos as JSON
 
 #Gets information about single video by its uuid
 @app.route('/api/video/<video_uuid>', methods=['GET'])
