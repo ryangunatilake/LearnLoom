@@ -1,0 +1,59 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 460px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-top: 120px;
+    border-radius: 20px;
+    font-family: Poppins, sans-serif;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form label {
+    margin-bottom: 10px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.options button {
+    width: 45%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    border: solid 1px green;
+    cursor: pointer;
+    margin-top: -20px;
+}
+
+.save-button {
+    font-family: Poppins, sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #5C338C;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 300px;
+    align-items: center;
+    margin-left: 90px;
+}

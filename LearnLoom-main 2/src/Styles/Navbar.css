@@ -1,0 +1,158 @@
+.navbar-section {
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+}
+/* .navbar-title a {
+    color: #1A8EFD;
+    letter-spacing: .6px;
+    text-decoration: none;
+} */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.navbar-logo-img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+.navbar-title {
+    font-family: 'Poppins', sans-serif;
+}
+/* .navbar-sign {
+    color: #54de54;
+    font-family: Cambria, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+} */
+.navbar-items {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-items > li {
+    list-style-type: none;
+}
+.navbar-links {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    letter-spacing: .8px;
+    position: relative; /* Add this line */
+}
+.navbar-links:hover {
+    color: #8d6db0;
+}
+.navbar-links:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust as needed */
+    width: 100%; /* Start width at 0% */
+    height: 2px; /* Adjust as needed */
+    background-color: #8d6db0; /* Adjust to match your color scheme */
+    animation: underline-animation 0.5s forwards; /* Apply the animation */
+}
+@keyframes underline-animation {
+    from {
+        width: 0%; /* Start from 0% */
+        left: 0; /* Start from the left */
+    }
+    to {
+        width: 100%; /* Expand to 100% */
+        left: 0; /* Stay aligned with the link */
+    }
+}
+.navbar-btn {
+    padding: 14px 30px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: transparent;
+    background-color: #5C338C;
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.navbar-btn:hover {
+    color: #5C338C;
+    background-color: white;
+    border: 1px solid #5C338C;
+}
+/* Hamburger Icon */
+.mobile-nav {
+    display: none;
+}
+.hamb-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    color: white;
+}
+.hamb-icon:hover {
+    color: #5C338C;
+}
+/* Mobile Navbar */
+.mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    transition: left .5s ease-in-out;
+}
+.mobile-navbar-close {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+}
+.mobile-navbar-close .hamb-icon:hover {
+    color: #5C338C;
+}
+.open-nav {
+    left: 0;
+}
+.mobile-navbar-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    gap: 24px;
+    text-align: center;
+}
+.mobile-navbar-links li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: .8px;
+    transition: color .3s ease-in-out;
+}
+.mobile-navbar-links li a:hover {
+    color: #5C338C;
+}
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .navbar-btn, .navbar-items {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+    }
+}

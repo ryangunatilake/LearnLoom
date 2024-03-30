@@ -1,0 +1,69 @@
+.faq-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px;
+}
+
+.faq-left {
+  width: 45%;
+}
+
+.faq-right {
+  width: 50%;
+}
+
+.faq-title {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 43px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.faq-description {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.faq-arrow {
+  font-size: 18px;
+  transition: transform 0.3s;
+  color: #A498E7;
+}
+
+.rotate {
+  transform: rotate(180deg); /* Rotates the arrow 180 degrees when clicked */
+  transition: transform 0.3s; /* Add transition for smoother rotation */
+}
+
+.faq-answer {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 5px;
+  max-height: 0; /* Initially hide the answer */
+  overflow: hidden; /* Hide overflowing content */
+  transition: max-height 0.3s ease; /* Add transition for smoother height change */
+}
+
+.faq-item:hover .faq-answer,  /* Show answer on hover (optional) */
+.faq-item.show .faq-answer {  /* Show answer when question is open based on showAnswer state */
+  font-family: 'Epilogue', sans-serif;
+  display: block;
+  max-height: 500px; /* This should be larger than the height of your content */
+}
